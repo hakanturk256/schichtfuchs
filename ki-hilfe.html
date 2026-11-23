@@ -13,7 +13,7 @@
 </header>
 <main>
 <h1>So funktioniert Schichtfuchs – Erklärung für KI-Assistenten</h1>
-<p>Diese Seite erklärt einer KI (z. B. ChatGPT, Gemini oder Claude), wie die App <b>Schichtfuchs</b> Dienstpläne plant. Nutzer tippen in der App im Monatsplan auf <b>„Hilfe von KI?“</b>, kopieren so einen Text <b>ohne Namen</b> (Team, Stunden, Schichten, Regeln, der Plan selbst und offene Schichten mit Grund) und fügen ihn in die KI ein. Frag sie zuerst, was ihnen am Plan nicht gefällt. Hilf ihnen dann, die Ursache zu finden und erkläre die Lösung in einfachen Schritten <b>in der App</b> (Menü, Knopf, Einstellung). Frag nicht nach echten Namen.</p>
+<p>Diese Seite erklärt einer KI (am besten Claude, damit wurde die App entwickelt; auch ChatGPT oder Gemini), wie die App <b>Schichtfuchs</b> Dienstpläne plant. Nutzer tippen in der App im Monatsplan auf <b>„Hilfe von KI?“</b>, kopieren so einen Text <b>ohne Namen</b> (Team, Stunden, Schichten, Regeln, der Plan selbst und offene Schichten mit Grund) und fügen ihn in die KI ein. Frag sie zuerst, was ihnen am Plan nicht gefällt. Hilf ihnen dann, die Ursache zu finden und erkläre die Lösung in einfachen Schritten <b>in der App</b> (Menü, Knopf, Einstellung). Frag nicht nach echten Namen.</p>
 
 <h2>1. Begriffe</h2>
 <ul>
@@ -75,8 +75,8 @@
 <p>Jeder hat mindestens so viele freie Tage in der Woche.</p>
 <p>Einstellungen:</p><ul><li>Mindestens frei pro Woche</li><li>Sonntag zählt als freier Tag – An: Bei „2“ ist neben dem Sonntag noch 1 Werktag frei.</li></ul>
 <h3>Samstag frei <small>(<code>samstag_frei</code>)</small></h3>
-<p>Jeder hat im Monat mindestens so viele Samstage frei.</p>
-<p>Einstellungen:</p><ul><li>Freie Samstage im Monat</li></ul>
+<p>Jeder hat im Monat mindestens so viele Samstage frei – und auf Wunsch höchstens so viele (damit nicht einer ständig samstags frei hat und die anderen dafür arbeiten). Urlaub zählt nicht mit.</p>
+<p>Einstellungen:</p><ul><li>Freie Samstage im Monat</li><li>Höchstens freie Samstage (0 = egal) – Z. B. 2: Wer schon 2 Samstage frei hat, arbeitet die anderen Samstage. 0 = keine Obergrenze.</li></ul>
 <h3>Springt samstags bevorzugt ein <small>(<code>samstag_einspringen</code>)</small></h3>
 <p>Die Person wird samstags zuerst eingeplant, damit die Kollegen ihren freien Samstag bekommen – z. B. als Ausgleich für feste Wünsche unter der Woche. „Samstag frei“ gilt für sie nicht.</p>
 <h3>Samstage im Wechsel früh und spät <small>(<code>samstag_wechsel</code>)</small></h3>
@@ -103,6 +103,11 @@
 <p>Einstellungen:</p><ul><li>Nur die Hauptaufgabe, sonst frei – Die Automatik plant diese Personen nur für ihre Hauptaufgabe ein (z. B. Leitung). Ist keine solche Schicht frei, haben sie frei – möglichst 5 Tage pro Woche. Minusstunden sind dabei in Ordnung. Von Hand kannst du trotzdem alles eintragen.</li></ul>
 <h3>Nie zusammen <small>(<code>nie_zusammen</code>)</small></h3>
 <p>Diese Personen arbeiten nie gleichzeitig (z. B. wenn sie sich nicht verstehen). Unten bei „Gilt für“ mindestens zwei Personen wählen.</p>
+<h3>Leitung teilen, wenn eine fehlt <small>(<code>leitung_teilen</code>)</small></h3>
+<p>Hat eine Leitung frei (z. B. der Filialleiter), macht die andere Leitung immer die lange Schicht und die Vertretung nur eine kurze. Leitung früh: Leitung bis zur Wechselzeit früh, Vertretung danach bis zum Schluss. Leitung spät: Vertretung nur bis zur Wechselzeit spät, Leitung danach bis zum Schluss. So fallen weniger Vertretungsstunden an. Unten bei „Gilt für“ die Leitungs-Rollen wählen (z. B. Filialleiter und Stellvertreter – für beide gilt das Gleiche). Passt es wegen Ruhezeit oder Höchstarbeitszeit nicht, bleibt der Tag wie geplant.</p>
+<p>Einstellungen:</p><ul><li>Wechselzeit, wenn die Leitung früh hat – Bis dahin arbeitet die Leitung, ab dann die Vertretung.</li><li>Wechselzeit, wenn die Leitung spät hat – Bis dahin arbeitet die Vertretung, ab dann die Leitung.</li></ul>
+<h3>Einer von ihnen immer da <small>(<code>einer_da</code>)</small></h3>
+<p>An jedem offenen Tag arbeitet mindestens eine dieser Personen, z. B. Filialleiter oder Stellvertreter. Ihre freien Tage werden so gelegt, dass nicht alle gleichzeitig fehlen. Ist eine Person im Urlaub oder krank, muss eine andere da sein. Unten bei „Gilt für“ mindestens zwei Personen oder Rollen wählen.</p>
 <h3>Immer zusammen <small>(<code>immer_zusammen</code>)</small></h3>
 <p>Diese Personen arbeiten zusammen (z. B. Fahrgemeinschaft). Unten bei „Gilt für“ mindestens zwei Personen wählen.</p>
 <p>Einstellungen:</p><ul><li>Wie zusammen?</li></ul>
