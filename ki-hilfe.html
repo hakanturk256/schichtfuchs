@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KI-Hilfe – Schichtfuchs</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="kopf">
+  <a class="marke" href="./">🦊 Schichtfuchs</a>
+  <nav><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="nutzungsbedingungen.html">Nutzungsbedingungen</a></nav>
+</header>
+<main>
+<h1>So funktioniert Schichtfuchs – Erklärung für KI-Assistenten</h1>
+<p>Diese Seite erklärt einer KI (z. B. ChatGPT, Gemini oder Claude), wie die App <b>Schichtfuchs</b> Dienstpläne plant. Nutzer tippen in der App im Monatsplan auf <b>„Hilfe von KI?“</b>, kopieren so einen Text <b>ohne Namen</b> (Team, Stunden, Schichten, Regeln, der Plan selbst und offene Schichten mit Grund) und fügen ihn in die KI ein. Frag sie zuerst, was ihnen am Plan nicht gefällt. Hilf ihnen dann, die Ursache zu finden und erkläre die Lösung in einfachen Schritten <b>in der App</b> (Menü, Knopf, Einstellung). Frag nicht nach echten Namen.</p>
+
+<h2>1. Begriffe</h2>
+<ul>
+<li><b>Schicht-Vorlage</b>: eine Pflichtschicht an einem Wochentag (z. B. „Kassierer spät 12:30–20:10“). Jede Vorlage gehört zu einer <b>Tätigkeit</b> (z. B. Kasse) und kann „bevorzugte Rollen“ haben. Vorlagen haben ein „gültig ab/bis“.</li>
+<li><b>Rolle</b> (z. B. Kassierer, Verkäufer): legt fest, welche Tätigkeiten jemand übernehmen darf, und hat eine <b>Hauptaufgabe</b>. Ein Mitarbeiter kann zusätzliche Rollen haben.</li>
+<li><b>Kürzel in der Diagnose</b>: Rolle + Nummer, z. B. KA1 = erster Kassierer. Namen sind entfernt, Krankheit erscheint nur als „abwesend“.</li>
+<li><b>Feste Tage</b> (bei Rolle oder Person): An diesen Wochentagen arbeitet die Person immer (Uhrzeit fest oder flexibel). Mit „Darf an anderen Tagen einspringen: Nein“ wird sie an anderen Tagen nicht geplant.</li>
+<li><b>Abwesenheiten</b>: U = Urlaub, K/KO = krank, AF = Wunschfrei, BS = Berufsschule (bei Azubis, nicht in den Schulferien). Urlaub, Krankheit und Berufsschule werden mit dem Tageswert gutgeschrieben, Wunschfrei nicht.</li>
+<li><b>Sondertage</b> (24.12., 31.12., einzeln geöffnete Sonntage): haben eigene Schichten.</li>
+</ul>
+
+<h2>2. Wie die Automatik plant</h2>
+<ol>
+<li>Sie füllt zuerst alle Pflichtschichten „gierig“ (die passendste freie Person).</li>
+<li>Dann verbessert sie den Plan tausendfach durch Tauschen und Verschieben (lokale Suche).</li>
+<li>Jede verletzte Wunschregel kostet <b>Strafpunkte</b> = Anzahl × Grundpunkte × <b>Stärke</b> (leicht 0.5, mittel 1.0, stark 3.0) × <b>Rangfaktor</b> (Regeln weiter oben in der Liste zählen etwas mehr). Eine unbesetzte Pflichtschicht kostet 100.000 Punkte – also fast immer mehr als jede Wunschregel.</li>
+<li>Es werden drei Vorschläge gerechnet. Der Nutzer wählt einen, von Hand eingetragene und fixierte Schichten bleiben beim Neuplanen erhalten.</li>
+</ol>
+<p><b>Wichtig:</b> Die Suche tauscht meist nur ein bis zwei Schichten gleichzeitig. Wenn ein Engpass sehr knapp ist (z. B. nur 3 Samstage im Monat und jeder soll einen frei haben), kann sie hängen bleiben. Dann hilft es, vorher ein „AF“ (Wunschfrei) einzutragen.</p>
+
+<h2>3. Gesetz und Pflicht – wird nie gebrochen</h2>
+<ul>
+<li>Ruhezeit zwischen zwei Schichten (Standard 11 Std.), höchstens X Std. Arbeit pro Tag (Standard 10), höchstens X Tage am Stück (Standard 6).</li>
+<li>Pausen werden automatisch abgezogen (Standard: über 6 Std. 30 Min., über 9 Std. 45 Min.). Alle Stunden sind netto.</li>
+<li>Niemand wird an Abwesenheitstagen, an geschlossenen Tagen oder für Tätigkeiten außerhalb seiner Rolle geplant.</li>
+<li>Mindestbesetzung beim Öffnen und Schließen (Standard 2 Personen) wird rot gemeldet.</li>
+<li>Jugendschutz (unter 18), Ersatz-Ruhetag nach Sonn- und Feiertagsarbeit.</li>
+</ul>
+<p>Bei einer offenen Schicht steht in der Diagnose pro passender Person der Grund („abwesend“, „arbeitet schon …“, „Ruhezeit“, „wäre der 7. Tag am Stück“ …) oder „Frei und könnte einspringen“.</p>
+
+<h2>4. Stunden</h2>
+<ul>
+<li><b>Tageswert</b> = Wochenstunden ÷ Arbeitstage pro Woche (Standard 6). Damit werden Urlaub, Krankheit und Berufsschule gutgeschrieben.</li>
+<li><b>Soll</b> im Monat ergibt sich aus den Wochenstunden. Feiertage werden nur gutgeschrieben, wenn „Feiertage als Stunden gutschreiben“ an ist – sonst gehen sie ins Minus.</li>
+<li><b>Saldo</b> = Ist − Soll + Übertrag aus dem Vormonat. Minijobber haben Mindest- und Höchststunden pro Monat statt Soll.</li>
+<li>Die Summe aller Pflichtschichten begrenzt, wie viele Stunden verplant werden können. Fehlen allen Mitarbeitern Stunden, sind meist zu wenige oder zu kurze Schicht-Vorlagen angelegt.</li>
+</ul>
+
+<h2>5. Häufige Ursachen und Lösungen</h2>
+<ul>
+<li><b>Feste Tage, aber keine passende Vorlage</b> an dem Tag → Vorlage anlegen oder den Tag aus den festen Tagen nehmen.</li>
+<li><b>Jemand bekommt eine Schicht, die er nicht soll</b> → bei der Vorlage „bevorzugte Rollen“ setzen, feste Tage mit „nicht einspringen“, oder die Tätigkeit aus seiner Rolle nehmen.</li>
+<li><b>Zu viele freie Tage / Minusstunden</b> bei einer Person → Regel „Stunden passend zum Vertrag“ für sie stärker stellen.</li>
+<li><b>Zwei starke Regeln widersprechen sich</b> → eine davon auf „mittel“ oder „leicht“ stellen.</li>
+<li><b>Niemand darf eine Tätigkeit machen</b> → bei einer Rolle die Tätigkeit ergänzen.</li>
+<li>Menüs in der App: Schicht-Vorlagen, Rollen, Mitarbeiter, Regeln (oben rechts „Eingebaute Regeln“ für Gesetz und Grundregeln), Feiertage, Einstellungen.</li>
+</ul>
+
+<h2>6. Alle Regeln (aus dem Programmcode)</h2>
+<p>Jede Regel gilt für alle, für bestimmte Rollen oder für bestimmte Personen und hat eine Stärke.</p>
+<h3>Stunden passend zum Vertrag <small>(<code>stunden</code>)</small></h3>
+<p>Wer zu wenig Stunden hat (auch aus dem Vormonat), bekommt bevorzugt Schichten. Überstunden sind egal oder begrenzt – wie du unten einstellst. Minijobber bleiben zwischen Mindest- und Höchststunden. Im Mitarbeiter-Profil geht das auch pro Person.</p>
+<p>Einstellungen:</p><ul><li>Erlaubte Abweichung (Std.) – So viele Stunden darf der Monat ohne Strafpunkte abweichen.</li><li>Übertrag aus Vormonat ausgleichen</li><li>Höchstens so viele Minusstunden – Gesamt-Saldo mit Vormonat. Wer mehr im Minus wäre, bekommt bevorzugt Tage von Kollegen mit Plus – nur wenn es nicht anders geht, bleibt er darüber.</li><li>Überstunden</li><li>Höchstens so viele Überstunden pro Monat – Gilt nur bei „Begrenzt“. Steht im Mitarbeiter-Profil etwas eigenes, gilt das für diese Person.</li></ul>
+<h3>Wochenweise: früh, dann spät, dann früh … <small>(<code>wochenwechsel</code>)</small></h3>
+<p>Eine ganze Woche früh, die nächste ganze Woche spät, und so weiter. Läuft über den Monatswechsel weiter.</p>
+<h3>Halbe Woche früh, halbe Woche spät <small>(<code>halbe_woche</code>)</small></h3>
+<p>Z. B. 3 Tage früh, 1 Tag frei, 2 Tage spät. Die neue Woche beginnt so, wie die alte aufgehört hat (endet sie spät, geht es spät weiter).</p>
+<h3>Freie Tage pro Woche <small>(<code>freie_tage</code>)</small></h3>
+<p>Jeder hat mindestens so viele freie Tage in der Woche.</p>
+<p>Einstellungen:</p><ul><li>Mindestens frei pro Woche</li><li>Sonntag zählt als freier Tag – An: Bei „2“ ist neben dem Sonntag noch 1 Werktag frei.</li></ul>
+<h3>Samstag frei <small>(<code>samstag_frei</code>)</small></h3>
+<p>Jeder hat im Monat mindestens so viele Samstage frei.</p>
+<p>Einstellungen:</p><ul><li>Freie Samstage im Monat</li></ul>
+<h3>Springt samstags bevorzugt ein <small>(<code>samstag_einspringen</code>)</small></h3>
+<p>Die Person wird samstags zuerst eingeplant, damit die Kollegen ihren freien Samstag bekommen – z. B. als Ausgleich für feste Wünsche unter der Woche. „Samstag frei“ gilt für sie nicht.</p>
+<h3>Samstage im Wechsel früh und spät <small>(<code>samstag_wechsel</code>)</small></h3>
+<p>Wer samstags arbeitet, hat abwechselnd einen Samstag früh und den nächsten spät. Samstage sind beliebt – so ist es fair.</p>
+<h3>Lieber früh / lieber spät <small>(<code>vorliebe</code>)</small></h3>
+<p>Persönlicher Wunsch: bevorzugt Früh- oder Spätschichten. Mit Wochentagen nur an diesen Tagen (z. B. „samstags lieber früh“) – das gilt dann vor einem allgemeinen Wunsch.</p>
+<p>Einstellungen:</p><ul><li>Lieber</li><li>Nur an diesen Tagen (leer = immer)</li></ul>
+<h3>Lieber lange / lieber kurze Schichten <small>(<code>schichtlaenge</code>)</small></h3>
+<p>Persönlicher Wunsch: Wer gern mehr arbeitet (z. B. Azubi), bekommt bevorzugt die langen Schichten, wer lieber weniger arbeitet, die kurzen.</p>
+<p>Einstellungen:</p><ul><li>Lieber</li><li>Lang ab (Std., Beginn bis Ende) – Schichten ab so vielen Stunden zählen als lang, kürzere als kurz. Beispiel: Kasse 07:50–13:00 = kurz, 12:30–20:10 = lang.</li></ul>
+<h3>Feste Tage <small>(<code>feste_schicht</code>)</small></h3>
+<p>An bestimmten Wochentagen immer eine bestimmte Schicht (z. B. „Mo + Mi immer früh“ oder „Mo + Mi immer 8–14 Uhr“) oder an diesen Tagen immer frei (z. B. „nie samstags“).</p>
+<p>Einstellungen:</p><ul><li>An diesen Tagen</li><li>Immer</li><li>Nur in den Schulferien – Die Regel gilt nur an Tagen in den Schulferien (Liste unter „Feiertage &amp; Schließtage“).</li><li>Ausgleich an den anderen Tagen – Gilt bei Früh oder Spät (auch „… oder frei“): An den übrigen Tagen bekommt die Person möglichst die andere Schicht. Wer z. B. Mo + Mi früh hat, arbeitet sonst eher spät – das ist gerecht gegenüber den Kollegen.</li></ul>
+<h3>Gemischte Schichten <small>(<code>gemischt</code>)</small></h3>
+<p>Niemand bekommt nur Früh- oder nur Spätschichten. Die Schichten werden nach den Prozenten verteilt – mit „+“ kommen Mittel- oder Nachtschicht dazu.</p>
+<p>Einstellungen:</p><ul><li>Verteilung</li><li>Erlaubte Abweichung (± %) – Z. B. 25: Bei 50 % früh sind 25–75 % in Ordnung. Kleiner = strenger.</li></ul>
+<h3>Nachtschichten fair verteilen <small>(<code>nacht_fair</code>)</small></h3>
+<p>Die Nachtschichten werden gleichmäßig im Team verteilt. Niemand bekommt mehr als die eingestellte Zahl im Monat.</p>
+<p>Einstellungen:</p><ul><li>Höchstens so viele Nächte im Monat</li></ul>
+<h3>Schicht zuerst an bestimmte Rollen <small>(<code>bevorzugte_rolle</code>)</small></h3>
+<p>An der Schicht-Vorlage steht „Bevorzugt für“: Diese Rollen bekommen die Schicht zuerst (z. B. Kassierer früh/spät an Kassierer, Kassen-Mittelschicht an Verkäufer). Andere nur, wenn es nicht anders geht. Eingestellt wird das bei den Schicht-Vorlagen unter „Bevorzugt für“ – ohne diese Regel wirkt es nicht.</p>
+<h3>Hauptaufgabe bevorzugen <small>(<code>hauptaufgabe</code>)</small></h3>
+<p>Jede Rolle wird bevorzugt für ihre Hauptaufgabe eingesetzt (z. B. Leitung zuerst mit FL/STV, Kasse zuerst mit Kassierern). Verkäufer springen als Joker ein.</p>
+<p>Einstellungen:</p><ul><li>Nur die Hauptaufgabe, sonst frei – Die Automatik plant diese Personen nur für ihre Hauptaufgabe ein (z. B. Leitung). Ist keine solche Schicht frei, haben sie frei – möglichst 5 Tage pro Woche. Minusstunden sind dabei in Ordnung. Von Hand kannst du trotzdem alles eintragen.</li></ul>
+<h3>Nie zusammen <small>(<code>nie_zusammen</code>)</small></h3>
+<p>Diese Personen arbeiten nie gleichzeitig (z. B. wenn sie sich nicht verstehen). Unten bei „Gilt für“ mindestens zwei Personen wählen.</p>
+<h3>Immer zusammen <small>(<code>immer_zusammen</code>)</small></h3>
+<p>Diese Personen arbeiten zusammen (z. B. Fahrgemeinschaft). Unten bei „Gilt für“ mindestens zwei Personen wählen.</p>
+<p>Einstellungen:</p><ul><li>Wie zusammen?</li></ul>
+<h3>Einarbeitung <small>(<code>einarbeitung</code>)</small></h3>
+<p>Eine neue Person wird am Anfang zusätzlich („doppelt“) mit einer Kollegin oder einem Kollegen eingeplant. Beginnt am ersten Arbeitstag (im Mitarbeiter-Profil) oder am „Gilt ab“-Datum der Regel.</p>
+<p>Einstellungen:</p><ul><li>Zusammen mit – Standard: jemand mit der gleichen Rolle.</li><li>Wie viele Wochen</li><li>Tage pro Woche</li></ul>
+<h3>Freie Tage am Stück <small>(<code>frei_am_stueck</code>)</small></h3>
+<p>Lieber zwei freie Tage hintereinander statt einzelne freie Tage zwischen Arbeitstagen (kein „Arbeit – frei – Arbeit“).</p>
+<h3>Höchstens X Spätschichten hintereinander <small>(<code>spaet_am_stueck</code>)</small></h3>
+<p>Z. B. nie mehr als 3 Spätdienste am Stück.</p>
+<p>Einstellungen:</p><ul><li>Höchstens</li></ul>
+<h3>24.12. und 31.12. fair <small>(<code>weihnachten_wechsel</code>)</small></h3>
+<p>Heiligabend und Silvester fair verteilen. Die App merkt sich, wer letztes Jahr gearbeitet hat.</p>
+<p>Einstellungen:</p><ul><li>Wie verteilen?</li></ul>
+<h3>Urlaubssperre <small>(<code>urlaubssperre</code>)</small></h3>
+<p>In diesem Zeitraum kein Urlaub (U) und kein Wunschfrei (AF), z. B. Inventur oder Woche vor Weihnachten. Die App warnt nur – eintragen geht trotzdem. Tipp: Bei „Eigener Name“ den Grund eintragen.</p>
+<p>Einstellungen:</p><ul><li>Von</li><li>Bis</li><li>Jedes Jahr wiederholen – An: gilt jedes Jahr zur gleichen Zeit (nur Tag und Monat).</li></ul>
+<h3>Spätestens bis … Uhr <small>(<code>spaetestens_bis</code>)</small></h3>
+<p>An bestimmten Tagen spätestens bis zu einer Uhrzeit, z. B. „Di und Do nur bis 15 Uhr“ wegen Kinderbetreuung.</p>
+<p>Einstellungen:</p><ul><li>An diesen Tagen</li><li>Spätestens bis</li></ul>
+<h3>Mindestlänge einer Schicht <small>(<code>mindestlaenge</code>)</small></h3>
+<p>Keine Schicht kürzer als X Stunden, damit sich der Weg lohnt (z. B. für Vollzeitkräfte). Kurze Schichten bekommen dann eher andere.</p>
+<p>Einstellungen:</p><ul><li>Mindestens Stunden</li></ul>
+
+<p class="stand">Stand: App-Version 1.0.10</p>
+</main>
+</body>
+</html>
