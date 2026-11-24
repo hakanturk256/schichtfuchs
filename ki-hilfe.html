@@ -13,7 +13,7 @@
 </header>
 <main>
 <h1>So funktioniert Schichtfuchs – Erklärung für KI-Assistenten</h1>
-<p>Diese Seite erklärt einer KI (am besten Claude, damit wurde die App entwickelt; auch ChatGPT oder Gemini), wie die App <b>Schichtfuchs</b> Dienstpläne plant. Nutzer tippen in der App im Monatsplan auf <b>„Hilfe von KI?“</b>, kopieren so einen Text <b>ohne Namen</b> (Team, Stunden, Schichten, Regeln, der Plan selbst und offene Schichten mit Grund) und fügen ihn in die KI ein. Frag sie zuerst, was ihnen am Plan nicht gefällt. Hilf ihnen dann, die Ursache zu finden und erkläre die Lösung in einfachen Schritten <b>in der App</b> (Menü, Knopf, Einstellung). Frag nicht nach echten Namen.</p>
+<p>Diese Seite erklärt einer KI (am besten Claude, damit wurde die App entwickelt; auch ChatGPT oder Gemini), wie die App <b>Schichtfuchs</b> Dienstpläne plant. Nutzer tippen in der App auf der Startseite oder im Monatsplan auf <b>„Hilfe von KI“</b>, kopieren so einen Text <b>ohne Namen</b> (Team, Stunden, Schichten, Regeln, der Plan selbst und offene Schichten mit Grund) und fügen ihn in die KI ein. Frag sie zuerst, was ihnen am Plan nicht gefällt. Hilf ihnen dann, die Ursache zu finden und erkläre die Lösung in einfachen Schritten <b>in der App</b> (Menü, Knopf, Einstellung). Frag nicht nach echten Namen.</p>
 
 <h2>1. Begriffe</h2>
 <ul>
@@ -58,6 +58,7 @@
 <li><b>Feste Tage, aber keine passende Vorlage</b> an dem Tag → Vorlage anlegen oder den Tag aus den festen Tagen nehmen.</li>
 <li><b>Jemand bekommt eine Schicht, die er nicht soll</b> → bei der Vorlage „bevorzugte Rollen“ setzen, feste Tage mit „nicht einspringen“, im Profil unter „Diese Tätigkeiten nie“ sperren oder die Tätigkeit aus seiner Rolle nehmen.</li>
 <li><b>Eine Vertretung soll mehr Leitungs-Vertretungen bekommen</b> → Regel „Vertretung anteilig verteilen“.</li>
+<li><b>Eine kurze Schicht bleibt offen</b> (z. B. Backen 6–9 Uhr) → Regel „Offene Schicht auffangen“: Wer an dem Tag sowieso arbeitet, bleibt länger.</li>
 <li><b>Zu viele freie Tage / Minusstunden</b> bei einer Person → Regel „Stunden passend zum Vertrag“ für sie stärker stellen.</li>
 <li><b>Zwei starke Regeln widersprechen sich</b> → eine davon auf „mittel“ oder „leicht“ stellen.</li>
 <li><b>Niemand darf eine Tätigkeit machen</b> → bei einer Rolle die Tätigkeit ergänzen.</li>
@@ -106,6 +107,9 @@
 <h3>Nie zusammen <small>(<code>nie_zusammen</code>)</small></h3>
 <p>Diese Personen arbeiten nie zusammen (z. B. wenn sie sich nicht verstehen). Wählbar: nur nicht gleichzeitig (früh und spät nacheinander am selben Tag ist erlaubt) oder nie am selben Tag. Unten bei „Gilt für“ mindestens zwei Personen wählen.</p>
 <p>Einstellungen:</p><ul><li>Wie streng? – Nicht gleichzeitig (Schichten überschneiden sich nicht) / Nie am selben Tag</li></ul>
+<h3>Offene Schicht auffangen (länger bleiben) <small>(<code>auffangen</code>)</small></h3>
+<p>Bleibt eine Pflichtschicht offen (z. B. Backen 6–9 Uhr), bleibt jemand, der an dem Tag sowieso arbeitet, so lange länger (oder kommt früher) und holt die Arbeit nach – z. B. Verkäufer 6–13 Uhr bleibt bis 16 Uhr. Empfohlen: „Gilt für: alle“ – dann fängt auf, wer die Tätigkeit laut Rolle darf; sonst bestimmte Rollen oder einzelne Mitarbeiter. Nur offene Schichten bis zur eingestellten Länge werden aufgefangen. Ruhezeit, Höchstarbeitszeit, Jugendschutz und der Überstunden-Deckel gelten weiter. In der Konfliktliste steht dann gelb, wer was auffängt.</p>
+<p>Einstellungen:</p><ul><li>Höchstens so viele Stunden extra (empfohlen: 3)</li><li>Wie auffangen? – Länger bleiben (empfohlen) / Früher kommen / Beides</li></ul>
 <h3>Vertretung anteilig verteilen <small>(<code>vertretung_anteil</code>)</small></h3>
 <p>Fehlt die Leitung (z. B. Filialleiter oder Stellvertreter frei), übernimmt eine Vertretung die Leitungsschicht. Diese Regel legt fest, wer davon mehr bekommt: bei „Gilt für“ die Person wählen, z. B. mit 70 % – dann bekommt sie etwa 7 von 10 Vertretungen, die anderen den Rest. Hat sie Urlaub oder passt die Ruhezeit nicht, springen die anderen ein.</p>
 <p>Einstellungen:</p><ul><li>Anteil der Vertretungen in Prozent</li></ul>
@@ -138,7 +142,7 @@
 <p>Keine Schicht kürzer als X Stunden, damit sich der Weg lohnt (z. B. für Vollzeitkräfte). Kurze Schichten bekommen dann eher andere.</p>
 <p>Einstellungen:</p><ul><li>Mindestens Stunden</li></ul>
 
-<p class="stand">Stand: App-Version 1.0.15</p>
+<p class="stand">Stand: App-Version 1.0.16</p>
 </main>
 </body>
 </html>
