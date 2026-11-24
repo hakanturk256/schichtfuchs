@@ -18,7 +18,7 @@
 <h2>1. Begriffe</h2>
 <ul>
 <li><b>Schicht-Vorlage</b>: eine Pflichtschicht an einem Wochentag (z. B. „Kassierer spät 12:30–20:10“). Jede Vorlage gehört zu einer <b>Tätigkeit</b> (z. B. Kasse) und kann „bevorzugte Rollen“ haben. Vorlagen haben ein „gültig ab/bis“.</li>
-<li><b>Rolle</b> (z. B. Kassierer, Verkäufer): legt fest, welche Tätigkeiten jemand übernehmen darf, und hat eine <b>Hauptaufgabe</b>. Ein Mitarbeiter kann zusätzliche Rollen haben.</li>
+<li><b>Rolle</b> (z. B. Kassierer, Verkäufer): legt fest, welche Tätigkeiten jemand übernehmen darf, und hat eine <b>Hauptaufgabe</b>. Ein Mitarbeiter kann zusätzliche Rollen haben. Im Mitarbeiter-Profil lassen sich unter „Diese Tätigkeiten nie“ einzelne Tätigkeiten der Rolle sperren (z. B. ein Verkäufer nie Kasse) – die Automatik plant die Person dafür dann nie ein.</li>
 <li><b>Kürzel in der Diagnose</b>: Rolle + Nummer, z. B. KA1 = erster Kassierer. Namen sind entfernt, Krankheit erscheint nur als „abwesend“.</li>
 <li><b>Feste Tage</b> (bei Rolle oder Person): An diesen Wochentagen arbeitet die Person immer (Uhrzeit fest oder flexibel). Mit „Darf an anderen Tagen einspringen: Nein“ wird sie an anderen Tagen nicht geplant.</li>
 <li><b>Abwesenheiten</b>: U = Urlaub, K/KO = krank, AF = Wunschfrei, BS = Berufsschule (bei Azubis, nicht in den Schulferien). Urlaub, Krankheit und Berufsschule werden mit dem Tageswert gutgeschrieben, Wunschfrei nicht.</li>
@@ -40,7 +40,8 @@
 <li>Pausen werden automatisch abgezogen (Standard: über 6 Std. 30 Min., über 9 Std. 45 Min.). Alle Stunden sind netto.</li>
 <li>Niemand wird an Abwesenheitstagen, an geschlossenen Tagen oder für Tätigkeiten außerhalb seiner Rolle geplant.</li>
 <li>Mindestbesetzung beim Öffnen und Schließen (Standard 2 Personen) wird rot gemeldet.</li>
-<li>Jugendschutz (unter 18), Ersatz-Ruhetag nach Sonn- und Feiertagsarbeit.</li>
+<li>Jugendschutz (unter 18), Azubi-Schutz (höchstens 5 Tage pro Woche mit Arbeit und Berufsschule, abschaltbar), Ersatz-Ruhetag nach Sonn- und Feiertagsarbeit.</li>
+<li>„Bei Personalmangel“ (Grundregel): legt fest, ob zuerst kurze oder lange Schichten offen bleiben.</li>
 </ul>
 <p>Bei einer offenen Schicht steht in der Diagnose pro passender Person der Grund („abwesend“, „arbeitet schon …“, „Ruhezeit“, „wäre der 7. Tag am Stück“ …) oder „Frei und könnte einspringen“.</p>
 
@@ -55,7 +56,8 @@
 <h2>5. Häufige Ursachen und Lösungen</h2>
 <ul>
 <li><b>Feste Tage, aber keine passende Vorlage</b> an dem Tag → Vorlage anlegen oder den Tag aus den festen Tagen nehmen.</li>
-<li><b>Jemand bekommt eine Schicht, die er nicht soll</b> → bei der Vorlage „bevorzugte Rollen“ setzen, feste Tage mit „nicht einspringen“, oder die Tätigkeit aus seiner Rolle nehmen.</li>
+<li><b>Jemand bekommt eine Schicht, die er nicht soll</b> → bei der Vorlage „bevorzugte Rollen“ setzen, feste Tage mit „nicht einspringen“, im Profil unter „Diese Tätigkeiten nie“ sperren oder die Tätigkeit aus seiner Rolle nehmen.</li>
+<li><b>Eine Vertretung soll mehr Leitungs-Vertretungen bekommen</b> → Regel „Vertretung anteilig verteilen“.</li>
 <li><b>Zu viele freie Tage / Minusstunden</b> bei einer Person → Regel „Stunden passend zum Vertrag“ für sie stärker stellen.</li>
 <li><b>Zwei starke Regeln widersprechen sich</b> → eine davon auf „mittel“ oder „leicht“ stellen.</li>
 <li><b>Niemand darf eine Tätigkeit machen</b> → bei einer Rolle die Tätigkeit ergänzen.</li>
@@ -102,7 +104,11 @@
 <p>Jede Rolle wird bevorzugt für ihre Hauptaufgabe eingesetzt (z. B. Leitung zuerst mit FL/STV, Kasse zuerst mit Kassierern). Verkäufer springen als Joker ein.</p>
 <p>Einstellungen:</p><ul><li>Nur die Hauptaufgabe, sonst frei – Die Automatik plant diese Personen nur für ihre Hauptaufgabe ein (z. B. Leitung). Ist keine solche Schicht frei, haben sie frei – möglichst 5 Tage pro Woche. Minusstunden sind dabei in Ordnung. Von Hand kannst du trotzdem alles eintragen.</li></ul>
 <h3>Nie zusammen <small>(<code>nie_zusammen</code>)</small></h3>
-<p>Diese Personen arbeiten nie gleichzeitig (z. B. wenn sie sich nicht verstehen). Unten bei „Gilt für“ mindestens zwei Personen wählen.</p>
+<p>Diese Personen arbeiten nie zusammen (z. B. wenn sie sich nicht verstehen). Wählbar: nur nicht gleichzeitig (früh und spät nacheinander am selben Tag ist erlaubt) oder nie am selben Tag. Unten bei „Gilt für“ mindestens zwei Personen wählen.</p>
+<p>Einstellungen:</p><ul><li>Wie streng? – Nicht gleichzeitig (Schichten überschneiden sich nicht) / Nie am selben Tag</li></ul>
+<h3>Vertretung anteilig verteilen <small>(<code>vertretung_anteil</code>)</small></h3>
+<p>Fehlt die Leitung (z. B. Filialleiter oder Stellvertreter frei), übernimmt eine Vertretung die Leitungsschicht. Diese Regel legt fest, wer davon mehr bekommt: bei „Gilt für“ die Person wählen, z. B. mit 70 % – dann bekommt sie etwa 7 von 10 Vertretungen, die anderen den Rest. Hat sie Urlaub oder passt die Ruhezeit nicht, springen die anderen ein.</p>
+<p>Einstellungen:</p><ul><li>Anteil der Vertretungen in Prozent</li></ul>
 <h3>Leitung teilen, wenn eine fehlt <small>(<code>leitung_teilen</code>)</small></h3>
 <p>Hat eine Leitung frei (z. B. der Filialleiter), macht die andere Leitung immer die lange Schicht und die Vertretung nur eine kurze. Leitung früh: Leitung bis zur Wechselzeit früh, Vertretung danach bis zum Schluss. Leitung spät: Vertretung nur bis zur Wechselzeit spät, Leitung danach bis zum Schluss. So fallen weniger Vertretungsstunden an. Unten bei „Gilt für“ die Leitungs-Rollen wählen (z. B. Filialleiter und Stellvertreter – für beide gilt das Gleiche). Passt es wegen Ruhezeit oder Höchstarbeitszeit nicht, bleibt der Tag wie geplant.</p>
 <p>Einstellungen:</p><ul><li>Wechselzeit, wenn die Leitung früh hat – Bis dahin arbeitet die Leitung, ab dann die Vertretung.</li><li>Wechselzeit, wenn die Leitung spät hat – Bis dahin arbeitet die Vertretung, ab dann die Leitung.</li></ul>
@@ -132,7 +138,7 @@
 <p>Keine Schicht kürzer als X Stunden, damit sich der Weg lohnt (z. B. für Vollzeitkräfte). Kurze Schichten bekommen dann eher andere.</p>
 <p>Einstellungen:</p><ul><li>Mindestens Stunden</li></ul>
 
-<p class="stand">Stand: App-Version 1.0.10</p>
+<p class="stand">Stand: App-Version 1.0.15</p>
 </main>
 </body>
 </html>
