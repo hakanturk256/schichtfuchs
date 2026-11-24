@@ -79,7 +79,7 @@
 <p>Einstellungen:</p><ul><li>Mindestens frei pro Woche</li><li>Sonntag zählt als freier Tag – An: Bei „2“ ist neben dem Sonntag noch 1 Werktag frei.</li></ul>
 <h3>Samstag frei <small>(<code>samstag_frei</code>)</small></h3>
 <p>Jeder hat im Monat mindestens so viele Samstage frei – und auf Wunsch höchstens so viele (damit nicht einer ständig samstags frei hat und die anderen dafür arbeiten). Urlaub zählt nicht mit.</p>
-<p>Einstellungen:</p><ul><li>Freie Samstage im Monat</li><li>Höchstens freie Samstage (0 = egal) – Z. B. 2: Wer schon 2 Samstage frei hat, arbeitet die anderen Samstage. 0 = keine Obergrenze.</li></ul>
+<p>Einstellungen:</p><ul><li>Freie Samstage im Monat</li><li>Höchstens freie Samstage (0 = egal) – Z. B. 2: Wer schon 2 Samstage frei hat, arbeitet die anderen Samstage. 0 = keine Obergrenze.</li><li>Geschlossene Samstage (z. B. Feiertag) zählen als frei – Beispiel: 3 frei, 4 Samstage, einer ist Feiertag → die Person hat noch 2 weitere frei und arbeitet 1.</li></ul>
 <h3>Springt samstags bevorzugt ein <small>(<code>samstag_einspringen</code>)</small></h3>
 <p>Die Person wird samstags zuerst eingeplant, damit die Kollegen ihren freien Samstag bekommen – z. B. als Ausgleich für feste Wünsche unter der Woche. „Samstag frei“ gilt für sie nicht.</p>
 <h3>Samstage im Wechsel früh und spät <small>(<code>samstag_wechsel</code>)</small></h3>
@@ -129,6 +129,12 @@
 <h3>Höchstens X Spätschichten hintereinander <small>(<code>spaet_am_stueck</code>)</small></h3>
 <p>Z. B. nie mehr als 3 Spätdienste am Stück.</p>
 <p>Einstellungen:</p><ul><li>Höchstens</li></ul>
+<h3>Spätschichten pro Woche <small>(<code>spaet_pro_woche</code>)</small></h3>
+<p>Pro Woche (Mo–So) mindestens und höchstens so viele Spätschichten, z. B. „1 bis 2 Tage spät, sonst früh“. Ob eine Schicht spät ist, richtet sich nach dem Schichtende.</p>
+<p>Einstellungen:</p><ul><li>Mindestens spät pro Woche (0 = egal; nur in Wochen mit mindestens 3 Arbeitstagen)</li><li>Höchstens spät pro Woche</li></ul>
+<h3>Frühschichten pro Woche <small>(<code>frueh_pro_woche</code>)</small></h3>
+<p>Dasselbe für Frühschichten, z. B. „höchstens 2× früh“.</p>
+<p>Einstellungen:</p><ul><li>Mindestens früh pro Woche (0 = egal)</li><li>Höchstens früh pro Woche</li></ul>
 <h3>24.12. und 31.12. fair <small>(<code>weihnachten_wechsel</code>)</small></h3>
 <p>Heiligabend und Silvester fair verteilen. Die App merkt sich, wer letztes Jahr gearbeitet hat.</p>
 <p>Einstellungen:</p><ul><li>Wie verteilen?</li></ul>
@@ -142,7 +148,7 @@
 <p>Keine Schicht kürzer als X Stunden, damit sich der Weg lohnt (z. B. für Vollzeitkräfte). Kurze Schichten bekommen dann eher andere.</p>
 <p>Einstellungen:</p><ul><li>Mindestens Stunden</li></ul>
 
-<p class="stand">Stand: App-Version 1.0.17</p>
+<p class="stand">Stand: App-Version 1.0.18</p>
 </main>
 </body>
 </html>
